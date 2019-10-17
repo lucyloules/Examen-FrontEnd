@@ -1,0 +1,44 @@
+{
+  "name": "queen",
+  "version": "1.0.0",
+  "description": "Sitio No Oficial de la banda Queen",
+  "main": "index.js",
+  "scripts": {
+    "json-server": "json-server --watch ./json-server.db.json",
+    "json-server-secure": "node ./json-server.secure.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/mich022/queen.git"
+  },
+  "author": "Mich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/mich022/queen/issues"
+  },
+  "homepage": "https://gitlab.com/mich022/queen#readme",
+  "dependencies": {
+    "@neos21/bootstrap3-glyphicons": "^1.0.3",
+    "angular": "1.3.20",
+    "angular-resource": "1.3.20",
+    "angular-route": "1.3.20",
+    "angular-ui-bootstrap": "0.14.3",
+    "bootstrap-css-only": "3.3.7",
+    "open-sans-fonts": "^1.5.1"
+  },
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "faker": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^6.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-live-server": "^0.0.31",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-uglify": "^3.0.2",
+    "json-server": "^0.15.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}

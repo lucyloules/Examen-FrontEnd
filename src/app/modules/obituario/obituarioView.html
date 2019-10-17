@@ -1,0 +1,65 @@
+<div id="public-layout-two-column" class="container">
+        
+    <div class="header-wrapper row">
+        <public-header></public-header>
+    </div>
+
+    <div class="nav-wrapper row">
+        <nav class="col-xs-12">
+            <public-nav></public-nav>
+        </nav>
+    </div>
+    
+    <div class="central-wrapper row obituario">
+        <aside class="col-xs-12 col-lg-4">
+            <form name="obituarioCtrl.obituarioForm">
+                <div class="form-group">
+                        <label for="autor">Autor:</label>
+                        <input autocomplete="off" type="text" class="form-control" name="autor" ng-model="obituarioCtrl.nuevoPost.autor" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input autocomplete="off" type="email" class="form-control" name="email" ng-model="obituarioCtrl.nuevoPost.email" required>
+                </div>
+                <div class="form-group">
+                    <label for="post">Reseña:</label>
+                    <textarea name="post" class="form-control" ng-model="obituarioCtrl.nuevoPost.post" required></textarea>
+                </div>
+                <button class="btn btn-success" ng-click="obituarioCtrl.addPost()" ng-disabled="!obituarioCtrl.obituarioForm.$valid">Confirmar</button>
+            </form>
+        </aside>
+
+        <section class="col-xs-12 col-lg-8">
+            <header>
+                <h4>Farrokh Bulsara A.K.A <strong>Freddy Mercury</strong> - Q.E.P.D. (05/09/1946 - 24/09/1991)</h4>
+            </header>
+            <article ng-show="obituarioCtrl.obituarioForm.post.$valid" class="carta-vista-previa">
+                <header>
+                    <h4><em>Querido Freddy. </em> <em class="carta-vista-previa-leyenda">( Vista Previa )</em></h4>
+                </header>
+                <p>
+                    <em>" {{obituarioCtrl.nuevoPost.post}} "</em>
+                </p>
+                <p class="text-right"><em>Por <strong>{{obituarioCtrl.nuevoPost.autor?obituarioCtrl.nuevoPost.autor:'Anónimo'}}</strong>. Fecha de escritura: </em> <strong>{{obituarioCtrl.fechaActual}}</strong></p>
+            </article>
+            <article class="carta" ng-repeat="post in obituarioCtrl.posts">
+                <p>
+                    <em>" {{post.post}} "</em>
+                </p>
+                <p class="text-right"><em>Por <strong>{{post.autor}}</strong>. Fecha de escritura: </em> <strong>{{post.fechaCreacion}}</strong></p>
+            </article>
+        </section>
+    </div>
+    
+    <div class="footer-wrapper row">
+        <footer class="col-xs-12">
+                <header>
+                    <h2>Links Oficiales</h2>
+                </header>
+                <a href="#/">Inicio</a> |
+                <a href="http://www.queenonline.com/" target="_blank">Sitio Oficial</a> | 
+                <a href="#/contacto">Contacto</a>
+        </footer>
+    </div>
+
+</div>

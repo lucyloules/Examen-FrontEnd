@@ -1,0 +1,42 @@
+<div id="public-layout-two-column" class="container">
+        
+    <div class="header-wrapper row">
+        <public-header></public-header>
+    </div>
+
+    <div class="nav-wrapper row">
+        <nav class="col-xs-12">
+            <public-nav></public-nav>
+        </nav>
+    </div>
+    
+    <div class="central-wrapper row">
+        <aside class="col-xs-12 col-lg-4">
+            <public-aside title="Integrantes" links="bandaCtrl.links"></public-aside>
+        </aside>
+
+        <section class="col-xs-12 col-lg-8">
+            <article>
+                <header>
+                    <h3>{{bandaCtrl.integranteSeleccionado.nombre}}</h3>
+                </header>
+                <p>
+                    {{bandaCtrl.integranteSeleccionado.descripcion}}
+                </tp>
+                <p class="text-right"><em>Última fecha de actualización : </em><strong>{{bandaCtrl.fechaActual}}</strong></p>
+            </article>
+        </section>
+    </div>
+    
+    <div class="footer-wrapper row">
+        <footer class="col-xs-12">
+                <header>
+                    <h2>Links Oficiales</h2>
+                </header>
+                <a href="#/">Inicio</a> |
+                <a href="http://www.queenonline.com/" target="_blank">Sitio Oficial</a> | 
+                <a href="#/contacto">Contacto</a>
+        </footer>
+    </div>
+
+</div>

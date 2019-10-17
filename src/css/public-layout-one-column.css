@@ -1,0 +1,78 @@
+@font-face {
+	font-family: OpenSans;
+	src: url(../fonts/OpenSans-Regular.woff);
+}
+
+/*
+	Estilos para layout publico de 1 columna.
+*/
+
+#public-layout-one-column {
+	font-family: OpenSans, serif;
+	border: 1px solid;
+}
+#public-layout-one-column > .header-wrapper {
+	height: 150px;
+	color: white;
+	background-image: url(../img/queen.jpg);
+	background-size: contain;
+}
+#public-layout-one-column > .nav-wrapper {
+	background-color: black;
+}
+#public-layout-one-column > .nav-wrapper > nav ul {
+	padding-left: 0;
+}
+#public-layout-one-column > .nav-wrapper > nav li {
+	display: inline;
+	padding: 2px;
+}
+#public-layout-one-column > .nav-wrapper > nav li a {
+	color: white;
+}
+#public-layout-one-column > .nav-wrapper > nav li.active a {
+	color: white;
+	text-decoration: underline;
+	font-size: 16px;
+	font-weight: bold;
+}
+#public-layout-one-column > .header-wrapper > header > * {
+	display: inline;
+}
+#public-layout-one-column > .header-wrapper > header p {
+	background-color: black;
+}
+#public-layout-one-column > .central-wrapper > section {
+	min-height: 300px;
+	padding-bottom: 15px;
+    padding-top: 15px;
+}
+#public-layout-one-column > .footer-wrapper {
+	background-color: black;
+	color: white;
+}
+#public-layout-one-column > .footer-wrapper a {
+	color: white;
+}
+
+/* Responsivos segun https://scotch.io/tutorials/default-sizes-for-twitter-bootstraps-media-queries */
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+	/*
+		Estilos para layout publico de 1 columna.
+	*/
+	#public-layout-one-column > .central-wrapper > section {
+		min-height: initial;
+	}
+	h1 {
+		font-size: 22px;
+	}
+	h2 {
+		font-size: 20px;
+	}
+	h3 {
+		font-size: 18px;
+	}
+	
+}

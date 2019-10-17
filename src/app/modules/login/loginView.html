@@ -1,0 +1,62 @@
+<div id="public-layout-one-column" class="container">
+        
+    <div class="header-wrapper row">
+        <public-header></public-header>
+    </div>
+
+    <div class="nav-wrapper row">
+        <nav class="col-xs-12">
+            <public-nav></public-nav>
+        </nav>
+    </div>
+    
+    <div class="central-wrapper row">
+        <section class="col-xs-12">
+            <article>
+                    <header>
+                        <h2>Login</h2>
+                    </header>
+                    <form name="loginCtrl.formulario">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-4">
+                                <div class="form-group" ng-class="loginCtrl.formulario.email.$touched
+                                && loginCtrl.formulario.email.$invalid ? 'has-error' : ''">
+                                    <label for="email">Email:</label>
+                                    <input autocomplete="off" type="email" class="form-control" name="email" ng-model="loginCtrl.form.email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-4">
+                                <div class="form-group" ng-class="loginCtrl.formulario.password.$touched
+                                && loginCtrl.formulario.password.$invalid ? 'has-error' : ''">
+                                    <label for="password">Contraseña:</label>
+                                    <input autocomplete="off" type="password" class="form-control" name="password" ng-model="loginCtrl.form.password" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" ng-show="loginCtrl.errorMessage">
+                            <div class="col-xs-12 col-lg-4">
+                                <div class="form-group has-error">
+                                    <span class="help-block">{{loginCtrl.errorMessage}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-success" ng-click="loginCtrl.login()" ng-disabled="loginCtrl.formulario.$invalid">Enviar</button>
+                    </form>
+            </article>
+        </section>
+    </div>
+    
+    <div class="footer-wrapper row">
+        <footer class="col-xs-12">
+                <header>
+                    <h2>Links Oficiales</h2>
+                </header>
+                <a href="#/">Inicio</a> |
+                <a href="http://www.queenonline.com/" target="_blank">Sitio Oficial</a> | 
+                <a href="#/contacto">Contacto</a>
+        </footer>
+    </div>
+
+</div>

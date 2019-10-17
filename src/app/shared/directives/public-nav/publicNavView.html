@@ -1,0 +1,8 @@
+<ul>
+    <li ng-class="currentLocation == rutas.home ? 'active' : ''"><a href="{{rutas.appBaseUrl+rutas.home}}">Inicio</a></li>
+    <li ng-class="currentLocation.startsWith(rutas.banda) ? 'active' : ''"><a href="{{rutas.appBaseUrl+rutas.banda}}">La Banda</a></li>
+    <li ng-class="currentLocation.startsWith(rutas.discografia) ? 'active' : ''"><a href="{{rutas.appBaseUrl+rutas.discografia}}">Discografia</a></li>
+    <li ng-class="currentLocation == rutas.contacto ? 'active' : ''"><a href="{{rutas.appBaseUrl+rutas.contacto}}">Contacto</a></li>
+    <li ng-class="currentLocation == rutas.obituario ? 'active' : ''"><a href="{{rutas.appBaseUrl+rutas.obituario}}">Obituario</a></li>
+    <li ng-class="currentLocation == rutas.login ? 'active' : ''"><a href="{{rutas.appBaseUrl+rutas.login}}">Login</a></li>
+</ul>

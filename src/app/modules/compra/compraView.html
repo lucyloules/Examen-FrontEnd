@@ -1,0 +1,52 @@
+<div id="private-layout-two-column" class="container-fluid">
+        <div class="header-wrapper row">
+            <public-header></public-header>
+        </div>
+      <div class="nav-wrapper row">
+            <private-nav></private-nav>
+        </div>
+         <div class="central-wrapper row">
+            <aside class="col-xs-12 col-lg-3">
+              <private-aside></private-aside>
+            </aside>
+          <section class="col-xs-12 col-lg-7">
+                <article>
+                    <header>
+                        <h3>{{compraCtrl.title}}</h3>
+                    </header>
+                    <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th>Id</th>
+                                <th>Fecha</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="compra in compraCtrl.compras">
+                                <td>{{compra.id}}</td>
+                                <td>{{compra.fecha}}</td>
+                                <td>{{compra.cantidad}}</td>
+                                <td>{{compra.cantidadTotal}}</td>
+                                <td>{{compra.estado}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                </article>
+            </section>
+        </div>
+        
+        <div class="footer-wrapper row">
+            <footer class="col-xs-12">
+                    <header>
+                        <h2>Links Oficiales</h2>
+                    </header>
+                    <a href="#/">Inicio</a> |
+                    <a href="http://www.queenonline.com/" target="_blank">Sitio Oficial</a> | 
+                    <a href="#/contacto">Contacto</a>
+            </footer>
+        </div>
+    
+    </div>

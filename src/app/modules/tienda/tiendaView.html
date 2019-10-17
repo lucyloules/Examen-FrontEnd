@@ -1,0 +1,79 @@
+<div id="private-layout-two-column" class="container-fluid">
+        <div class="header-wrapper row">
+            <public-header></public-header>
+        </div>
+       <div class="nav-wrapper row">
+            <private-nav></private-nav>
+        </div>
+         <div class="central-wrapper row">
+            <aside class="col-xs-12 col-lg-3">
+              <private-aside></private-aside>
+            </aside>
+          <section class="col-xs-12 col-lg-5">
+              <article>
+                 <header>
+                    <h3>{{tiendaCtrl.title}}</h3>
+                 </header>
+              </article>
+             <article ng-repeat="producto in tiendaCtrl.productos">
+                    <div class="media">
+                        <div class="media-left">
+                          <img ng-src="{{producto.urlImagen}}" class="media-object" style="width:190px">
+                        </div>
+                        <div class="media-body ">
+                          <h4 style="font-weight:bold;">{{producto.nombre}} - Precio: CLP {{producto.precio}}</h4>
+                          <p>{{producto.desc}}</p><br>
+                          <form name="tiendaCtrl.formulario{{$index}}" novalidate="novalidate">
+                            <input type="number" name="quantity{{$index}}" ng-model="tiendaCtrl.quantity[$index]" min="1" max="5" required="required">
+                            <button ng-click="tiendaCtrl.agregarProducto($index)" type="button" class="btn btn-success" class="form-control" ng-disabled="!tiendaCtrl.formulario{{$index}}.$valid">Agregar</button>
+                          </form>
+                        </div>
+                    </div><br>
+             </article> <br>
+          </section>
+         <aside class="col-md-4" style="background:#ECF4FF;">
+            <ul class="nav nav-pills nav-stacked">
+                <h3>{{tiendaCtrl.titletwo}}</h3>
+                
+                <p ng-if="tiendaCtrl.productoComprado">
+                  La comrpa ha sido exitosa. <a href="{{tiendaCtrl.rutas.appBaseUrl+tiendaCtrl.rutas.compra}}">Ir a mis Compras</a>
+              </p>
+                <table style="float: right;" style="display: inline;" class="table table-hover">
+                    <thead ng-if="item">
+                        <tr>
+                          <th>Producto</th>
+                          <th>Precio</th>
+                          <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  ng-repeat="item in tiendaCtrl.carrito.items">
+                          <td>{{item.nombre}}</td>
+                          <td>{{item.precio * item.cantidad | currency:"CLP "}}</td>
+                          <td>{{item.cantidad}}</td>
+                          <td><button ng-click="tiendaCtrl.eliminarProducto($index)" class="btn btn-danger">Eliminar</button></td>
+                         </tr>
+                       </tbody>
+                       <tfoot>
+                        <tr>
+                          <td><strong>Total</strong></td>
+                          <td><strong>{{tiendaCtrl.carrito.precioTotal | currency: "CLP "}}</strong></td>
+                          <td><strong>{{tiendaCtrl.carrito.cantidadTotal }}</strong></td>
+                          <td><button ng-click="tiendaCtrl.comprarProducto()" class="btn btn-success">Comprar</button></td>
+                        </tr>
+                       </tfoot>
+                </table>
+            </ul>
+        </aside>
+        </div>
+        <div class="footer-wrapper row">
+            <footer class="col-xs-12">
+                    <header>
+                        <h2>Links Oficiales</h2>
+                    </header>
+                    <a href="#/">Inicio</a> |
+                    <a href="http://www.queenonline.com/" target="_blank">Sitio Oficial</a> | 
+                    <a href="#/contacto">Contacto</a>
+            </footer>
+        </div>
+    </div>

@@ -1,0 +1,8 @@
+<nav>
+    <header>
+        <h2>{{title}}</h2>
+    </header>
+    <ul>
+        <li ng-repeat="link in links" ng-class="link.active ? 'active' : ''"><a href="{{link.href}}">{{link.text}}</a></li>
+    </ul>
+</nav>

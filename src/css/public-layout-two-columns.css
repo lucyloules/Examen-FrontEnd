@@ -1,0 +1,120 @@
+@font-face {
+	font-family: OpenSans;
+	src: url(../fonts/OpenSans-Regular.woff);
+}
+/*
+	Estilos para layout publico de 2 columnas.
+*/
+#public-layout-two-column {
+	font-family: OpenSans,serif;
+	border: 1px solid;
+}
+#public-layout-two-column > .header-wrapper {
+	height: 150px;
+	color: white;
+	background-image: url(../img/queen.jpg);
+	background-size: contain;
+}
+#public-layout-two-column > .nav-wrapper {
+	background-color: black;
+}
+#public-layout-two-column > .nav-wrapper > nav ul {
+	padding-left: 0;
+}
+#public-layout-two-column > .nav-wrapper > nav li {
+	display: inline;
+	padding: 2px;
+}
+#public-layout-two-column > .nav-wrapper > nav li a {
+	color: white;
+}
+#public-layout-two-column > .nav-wrapper > nav li.active a {
+	color: white;
+	text-decoration: underline;
+	font-size: 16px;
+	font-weight: bold;
+}
+#public-layout-two-column > .header-wrapper > header > * {
+	display: inline;
+}
+#public-layout-two-column > .header-wrapper > header p {
+	background-color: black;
+}
+#public-layout-two-column > .central-wrapper.obituario {
+	background-image: url(../img/cementerio.jpg);
+	background-size: contain;
+}
+#public-layout-two-column > .central-wrapper > aside, #public-layout-two-column > .central-wrapper > section {
+	min-height: 300px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+#public-layout-two-column > .central-wrapper > section > header {
+	background-color: black;
+    color: white;
+    padding: 10px;
+}
+#public-layout-two-column > .central-wrapper > section > header h4 {
+	margin: 0;
+}
+#public-layout-two-column > .central-wrapper > section > article {
+	background-color: white;
+}
+#public-layout-two-column > .central-wrapper > section > article.carta-vista-previa {
+	background-color: antiquewhite;
+    border-radius: 5px;
+	padding: 5px;
+	border: 2px dashed;
+	margin-top: 5px;
+}
+#public-layout-two-column > .central-wrapper > section > article.carta-vista-previa .carta-vista-previa-leyenda{
+	font-size: 12px;
+	font-weight: bold;
+}
+#public-layout-two-column > .central-wrapper > section > article.carta {
+    border-radius: 5px;
+	padding: 5px;
+	border: 2px solid;
+	margin-top: 5px;
+}
+#public-layout-two-column > .central-wrapper > section p:last-child {
+	clear: both;
+}
+#public-layout-two-column > .central-wrapper > section p > img {
+	float: left;
+    padding: 10px;
+    padding-top: 0;
+}
+#public-layout-two-column > .central-wrapper > aside nav li.active a{
+	text-decoration: underline;
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
+}
+#public-layout-two-column > .footer-wrapper {
+	background-color: black;
+	color: white;
+}
+#public-layout-two-column > .footer-wrapper a {
+	color: white;
+}
+
+/* Responsivos segun https://scotch.io/tutorials/default-sizes-for-twitter-bootstraps-media-queries */
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	/*
+		Estilos para layout publico de 2 columnas.
+	*/
+	#public-layout-two-column > .central-wrapper > aside, #public-layout-two-column > .central-wrapper > section  {
+		min-height: initial;
+	}
+	h1 {
+		font-size: 22px;
+	}
+	h2 {
+		font-size: 20px;
+	}
+	h3 {
+		font-size: 18px;
+	}
+}

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle btn navbar-btn" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{rutas.appBaseUrl+rutas.dashboard}}">Queen - Intranet</a>
+            </div>
+            <div collapse="navCollapsed" class="navbar-collapse navbar-responsive-collapse collapse" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a>Hola! {{usuario}}</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a>
+                            <span class="glyphicon glyphicon-bell"></span> Notificaciones
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="glyphicon glyphicon-cog"></span> Configuración
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{rutas.appBaseUrl+rutas.logout}}">
+                            <span class="glyphicon glyphicon-off"></span> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    

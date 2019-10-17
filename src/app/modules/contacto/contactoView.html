@@ -1,0 +1,108 @@
+<div id="public-layout-one-column" class="container">
+        
+    <div class="header-wrapper row">
+        <public-header></public-header>
+    </div>
+
+    <div class="nav-wrapper row">
+        <nav class="col-xs-12">
+            <public-nav></public-nav>
+        </nav>
+    </div>
+    
+    <div class="central-wrapper row">
+        <section class="col-xs-12">
+            <article>
+                    <header>
+                        <h2>Contáctanos! Estaremos felices de que nos escribas!</h2>
+                    </header>
+                    <form name="contactoCtrl.formulario">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-4">
+                                <div class="form-group" ng-class="contactoCtrl.formulario.nombre.$touched
+                                && contactoCtrl.formulario.nombre.$invalid ? 'has-error' : ''">
+                                    <label for="nombre">Nombre:</label>
+                                    <input autocomplete="off" type="text" class="form-control" name="nombre" ng-model="contactoCtrl.form.nombre" required/>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-lg-4">
+                                <div class="form-group" ng-class="contactoCtrl.formulario.email.$touched
+                                && contactoCtrl.formulario.email.$invalid ? 'has-error' : ''">
+                                    <label for="email">Email:</label>
+                                    <input autocomplete="off" type="email" class="form-control" name="email" ng-model="contactoCtrl.form.email" required>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-lg-4">
+                                <div class="form-group" ng-class="contactoCtrl.formulario.pais.$touched
+                                && contactoCtrl.formulario.pais.$invalid ? 'has-error' : ''">
+                                    <label for="pais">Pais:</label>
+                                    <select class="form-control" name="pais" ng-model="contactoCtrl.form.pais" required>
+                                        <option ng-repeat="pais in contactoCtrl.paises">{{pais.nombre}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-4">
+                                <div class="form-group" ng-class="contactoCtrl.formulario.edad.$touched && (contactoCtrl.formulario.edad.$error.required 
+                                || contactoCtrl.formulario.edad.$error.formControlNumeroValidator) ? 'has-error' : ''">
+                                    <label for="edad">Edad:</label>
+                                    <select class="form-control" name="edad" ng-model="contactoCtrl.form.edad" required form-control-numero-validator=">= 18">
+                                        <option ng-repeat="x in [].constructor(130) track by $index">{{$index+1}}</option>
+                                    </select>
+                                    <span ng-show="contactoCtrl.formulario.edad.$touched 
+                                        && !contactoCtrl.formulario.edad.$error.required
+                                        && contactoCtrl.formulario.edad.$error.formControlNumeroValidator" class="help-block">Ud es muy chiquitin. Debe ser mayor de edad.</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-lg-4">
+                                <div class="form-group">
+                                    <label for="edad">Sexo:</label><br>
+                                    <input type="radio" value="M" ng-model="contactoCtrl.form.sexo" ng-required="!contactoCtrl.form.sexo"> Masculino<br>
+                                    <input type="radio" value="F" ng-model="contactoCtrl.form.sexo" ng-required="!contactoCtrl.form.sexo"> Femenino
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-lg-4">
+                                <div class="form-group" ng-class="contactoCtrl.formulario.motivo.$touched
+                                && contactoCtrl.formulario.motivo.$invalid ? 'has-error' : ''">
+                                    <label for="motivo">Motivo:</label>
+                                    <select class="form-control" name="motivo" ng-model="contactoCtrl.form.motivo" required>
+                                        <option ng-repeat="motivo in contactoCtrl.motivos">{{motivo.nombre}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-4">
+                                <div class="form-group" ng-class="contactoCtrl.formulario.asunto.$touched
+                                && contactoCtrl.formulario.asunto.$invalid ? 'has-error' : ''">
+                                    <label for="asunto">Asunto:</label>
+                                    <input autocomplete="off" type="text" class="form-control" name="asunto" ng-model="contactoCtrl.form.asunto" required>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-lg-8">
+                                <div class="form-group" ng-class="contactoCtrl.formulario.mensaje.$touched
+                                && contactoCtrl.formulario.mensaje.$invalid ? 'has-error' : ''">
+                                    <label for="mensaje">Mensaje:</label>
+                                    <textarea name="mensaje" class="form-control" ng-model="contactoCtrl.form.mensaje" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-success" ng-click="contactoCtrl.enviar()" ng-disabled="!contactoCtrl.formulario.$valid">Enviar</button>
+                    </form>
+            </article>
+        </section>
+    </div>
+    
+    <div class="footer-wrapper row">
+        <footer class="col-xs-12">
+                <header>
+                    <h2>Links Oficiales</h2>
+                </header>
+                <a href="#/">Inicio</a> |
+                <a href="http://www.queenonline.com/" target="_blank">Sitio Oficial</a> | 
+                <a href="#/contacto">Contacto</a>
+        </footer>
+    </div>
+
+</div>
